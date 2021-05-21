@@ -1,2 +1,2 @@
 language = "java10"
-run = "java big_o/_04_logAllPairsOfArray.java"
+run = "java big_o/_05_printAllNumbersThenAllPairSums.java"
