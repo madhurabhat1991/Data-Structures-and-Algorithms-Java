@@ -1,2 +1,2 @@
 language = "java10"
-run = "java problem_solving/_02_hasPairWithSum.java"
+run = "java data_structures/arrays/_01_arrays.java"
