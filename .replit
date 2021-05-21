@@ -1,2 +1,2 @@
 language = "java10"
-run = "java big_o/_03_compressTwoBoxes.java"
+run = "java big_o/_04_logAllPairsOfArray.java"
