@@ -1,2 +1,2 @@
 language = "java10"
-run = "java big_o/_06_factorial.java"
+run = "java big_o/_07_boooo.java"
