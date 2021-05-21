@@ -1,2 +1,2 @@
 language = "java10"
-run = "java big_o/_08_twitter.java"
+run = "java problem_solving/_01_containsCommonItem.java"
