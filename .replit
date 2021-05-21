@@ -1,2 +1,2 @@
 language = "java10"
-run = "java big_o/_01_findNemo1.java"
+run = "java big_o/_02_printFirstItemThenFirstHalfThenSayHi100Times.java"
