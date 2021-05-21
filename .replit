@@ -1,2 +1,2 @@
 language = "java10"
-run = "java problem_solving/_01_containsCommonItem.java"
+run = "java problem_solving/_02_hasPairWithSum.java"
