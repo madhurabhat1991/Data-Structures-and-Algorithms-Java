@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/arrays/_02_reference_type.java"
+run = "java data_structures/arrays/_03_context.java"
