@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/arrays/_04_instantiation.java"
+run = "java data_structures/arrays/_05_array_implementation.java"
