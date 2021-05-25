@@ -1,3 +1,6 @@
+// create a function that reverse a string:
+// example: "Hello World" becomes "dlroW olleH"
+
 class _06_reverse{
   public static void main(String[] args){
     System.out.println(reverse(""));
