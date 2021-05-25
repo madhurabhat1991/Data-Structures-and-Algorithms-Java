@@ -21,6 +21,9 @@ class _08_twoSum{
     }    
 
     return new int[2];
+
+    // TC - O(n)
+    // SC - O(n)
   }
 
   public static int[] twoSumNaive(int[] nums, int target) {
@@ -35,5 +38,8 @@ class _08_twoSum{
       }
     }
     return result;
+
+    // TC - O(n^2)
+    // SC - O(1)
   }
 }
