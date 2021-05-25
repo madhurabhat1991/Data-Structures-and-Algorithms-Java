@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/arrays/_06_reverse.java"
+run = "java data_structures/arrays/_07_mergeSortedArrays.java"
