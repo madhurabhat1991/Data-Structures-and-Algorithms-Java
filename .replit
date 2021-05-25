@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/arrays/_09_maxSubArray.java"
+run = "java data_structures/arrays/_10_moveZeroes.java"
