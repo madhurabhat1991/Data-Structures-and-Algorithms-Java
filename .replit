@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/hash_tables/_01_hashTable_implementation.java"
+run = "java data_structures/hash_tables/_02_hashTables.java"
