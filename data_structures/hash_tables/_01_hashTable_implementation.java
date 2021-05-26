@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 class _01_hashTable_implementation{
   public static void main(String[] args){
@@ -10,6 +9,9 @@ class _01_hashTable_implementation{
     myHash.set("bananas", 45);
     System.out.println("apples - " + myHash.get("apples"));
     System.out.println("bananas - " + myHash.get("bananas"));
+    System.out.println(Arrays.toString(myHash.keys().toArray()));
+    myHash.set("mangoes", 23);
+    System.out.println(Arrays.toString(myHash.keys().toArray()));
   }
 }
 
@@ -52,6 +54,19 @@ public class HashTable{
       }
     }
     return null;
+  }
+
+  public List<String> keys(){
+    List<String> keysArray = new ArrayList<String>();
+    for (int i = 0; i < data.length; ++i){
+      if (data[i] != null){
+        ArrayList<KeyValue> bucket = data[i];
+        for (KeyValue kvp : bucket){
+          keysArray.add(kvp.getKey());
+        }
+      }
+    }
+    return keysArray;
   }
 }
 
