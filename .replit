@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/arrays/_12_rotateArray.java"
+run = "java data_structures/arrays/_13_longestWord.java"
