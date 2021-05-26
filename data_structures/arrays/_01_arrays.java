@@ -30,7 +30,6 @@ class _01_arrays{
     // add item in the middle of the array
     strings.add(2, "alien");
     // O(n/2) = O(n)
-    System.out.println(strings);
-    
+    System.out.println(strings);    
   }
 }
