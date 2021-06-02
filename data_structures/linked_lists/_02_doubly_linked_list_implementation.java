@@ -1,18 +1,5 @@
 // 10 --> 5 --> 16
-
-// Create the below linked list:
-// myLinkedList = {
-//   head: {
-//     value: 10
-//     next: {
-//       value: 5
-//       next: {
-//         value: 16
-//         next: null
-//       }
-//     }
-//   }
-// };
+// 10 <-- 5 <-- 16
 
 import java.util.*;
 
