@@ -18,7 +18,7 @@ import java.util.*;
 
 class _02_doubly_linked_list_implementation{
   public static void main(String[] args){
-    LinkedList myLinkedList = new LinkedList(10);
+    DoublyLinkedList myLinkedList = new DoublyLinkedList(10);
     myLinkedList.displayList();
 
     myLinkedList.append(5);
@@ -48,12 +48,12 @@ class _02_doubly_linked_list_implementation{
   }  
 }
 
-public class LinkedList{
+public class DoublyLinkedList{
   Node head;
   Node tail;
   int length;
 
-  public LinkedList(int value){
+  public DoublyLinkedList(int value){
     head = new Node(value);
     tail = head;
     length = 1;
@@ -62,6 +62,7 @@ public class LinkedList{
   public void append(int value){
     Node newNode = new Node(value);
     tail.next = newNode;
+    newNode.previous = tail;
     tail = newNode;
     length++;
     displayList();
@@ -70,6 +71,7 @@ public class LinkedList{
   public void prepend(int value){
     Node newNode = new Node(value);
     newNode.next = head;
+    head.previous = newNode;
     head = newNode;
     length++;
     displayList();
@@ -94,7 +96,9 @@ public class LinkedList{
       Node current = traverseToIndex(index);
       Node newNode = new Node(value);
       newNode.next = current.next;
+      current.next.previous = newNode;
       current.next = newNode;
+      newNode.previous = current;
       length++;
       displayList();
     }
@@ -107,6 +111,7 @@ public class LinkedList{
     }
     else if (index == 0){
       head = head.next;
+      head.previous = null;
       length--;
     }
     else{
@@ -116,6 +121,9 @@ public class LinkedList{
       // when removing last item, it becomes tail
       if (index == length){
         tail = current;
+      }
+      else{        
+        current.next.previous = current;
       }
     }
     displayList();
@@ -133,15 +141,28 @@ public class LinkedList{
       current = current.next;
     }
     System.out.println("Head " + head.value + "\tTail " + tail.value + "\tList " + Arrays.toString(myList.toArray()));
+    displayReverseList();
+  }
+
+  public void displayReverseList(){
+    List<Integer> myList = new ArrayList<>();
+    Node current = tail;
+    while (current != null){
+      myList.add(current.value);
+      current = current.previous;
+    }
+    System.out.println("Head " + head.value + "\tTail " + tail.value + "\tReverse List " + Arrays.toString(myList.toArray()) + "\n");
   }
 }
 
 public class Node{
   int value;
   Node next;
+  Node previous;
 
   public Node (int value){
     this.value = value;
     this.next = null;
+    this.previous = null;
   }
 }
