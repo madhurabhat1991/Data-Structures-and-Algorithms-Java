@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/linked_lists/_02_doubly_linked_list_implementation.java"
+run = "java data_structures/linked_lists/_01_singly_linked_list_implementation.java"
