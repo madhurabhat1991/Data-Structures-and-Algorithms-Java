@@ -1,8 +1,9 @@
 import java.util.*;
 
-class _01_stack_implmentation_linked_lists{
+class _02_stack_implmentation_arrays{
   public static void main(String[] args){
     Stack myStack = new Stack();
+    System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
     myStack.pop();
     System.out.println("Peek " + myStack.peek());
@@ -14,54 +15,37 @@ class _01_stack_implmentation_linked_lists{
     myStack.push("Udemy");
     System.out.println("Peek " + myStack.peek());
     myStack.push("Discord");
+    System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
     System.out.println("Last element " + myStack.getLastElement());
     myStack.pop();
     myStack.pop();
     myStack.pop();
-    System.out.println(myStack.length);
+    System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
     System.out.println("Last element " + myStack.getLastElement());
+    
   }
 }
 
 public class Stack{
-  Node top;
-  Node bottom;
-  int length;
+  List<String> stackArray;
 
   public Stack(){
-    this.top = null;
-    this.bottom = null;
-    this.length = 0;
+    this.stackArray = new ArrayList<>();
   }
 
   public void push(String value){
-    Node newNode = new Node(value);
-    if (length == 0){
-      top = newNode;
-      bottom = newNode;
-    }
-    else{
-      newNode.next = top;
-      top = newNode;
-    }
-    length++;
+    stackArray.add(value);
     displayStack();
   }
 
   public void pop(){
-    if (length > 0){
-      top = top.next;
+    if (this.stackArray.size() > 0){
+      this.stackArray.remove(this.stackArray.size()-1);
+    }    
 
-      if (length == 1){
-        top = null;
-        bottom = null;
-      }
-      length--;      
-    }
-
-    if (length > 0){
+    if (this.stackArray.size() > 0){
       displayStack();
     }
     else{
@@ -70,8 +54,8 @@ public class Stack{
   }
 
   public String peek(){
-    if (length > 0){
-      return top.value;
+    if (this.stackArray.size() > 0){
+      return this.stackArray.get(this.stackArray.size()-1);
     }
     else{
       return null;
@@ -79,12 +63,12 @@ public class Stack{
   }
 
   public boolean isEmpty(){
-    return length == 0;
+    return this.stackArray.size() == 0;
   }
 
   public String getLastElement(){
-    if (length > 0){
-      return bottom.value;
+    if (this.stackArray.size() > 0){
+      return this.stackArray.get(0);
     }
     else{
       return null;
@@ -92,26 +76,13 @@ public class Stack{
   }
 
   public int getLength(){
-    return this.length;
+    return this.stackArray.size();
   }
 
   public void displayStack(){
-    List<String> myList = new ArrayList<>();
-    Node current = this.top;
-    while(current != null){
-      myList.add(current.value);
-      current = current.next;
-    }
-    System.out.println("Top " + this.top.value + "\tBottom " + this.bottom.value + "\tList " + Arrays.toString(myList.toArray()));
+    List<String> reverseList = new ArrayList<>();
+    reverseList.addAll(this.stackArray);
+    Collections.reverse(reverseList);
+    System.out.println("Top " + this.stackArray.get(this.stackArray.size()-1) + "\tBottom " + this.stackArray.get(0) + "\tList " + Arrays.toString(reverseList.toArray()));
   }
-}
-
-public class Node{
-  String value;
-  Node next;
-
-  public Node(String value)  {
-    this.value = value;
-    this.next = null;
-  }  
 }

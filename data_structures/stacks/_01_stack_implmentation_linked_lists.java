@@ -3,6 +3,7 @@ import java.util.*;
 class _01_stack_implmentation_linked_lists{
   public static void main(String[] args){
     Stack myStack = new Stack();
+    System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
     myStack.pop();
     System.out.println("Peek " + myStack.peek());
@@ -14,12 +15,13 @@ class _01_stack_implmentation_linked_lists{
     myStack.push("Udemy");
     System.out.println("Peek " + myStack.peek());
     myStack.push("Discord");
+    System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
     System.out.println("Last element " + myStack.getLastElement());
     myStack.pop();
     myStack.pop();
     myStack.pop();
-    System.out.println(myStack.length);
+    System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
     System.out.println("Last element " + myStack.getLastElement());
   }
