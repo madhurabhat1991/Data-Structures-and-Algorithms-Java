@@ -1,5 +1,5 @@
-class _04_instantiation{
-  public static void main(String[] args){
+class _04_instantiation {
+  public static void main(String[] args) {
     Wizard wizard1 = new Wizard("Shelly", "Healer");
     wizard1.introduce();
     wizard1.play();
@@ -17,26 +17,29 @@ class _04_instantiation{
   }
 }
 
-public class Player{
+public class Player {
   String name;
   String type;
-  public Player(String name, String type){
+
+  public Player(String name, String type) {
     System.out.println("Player " + this);
     this.name = name;
     this.type = type;
   }
-  public void introduce(){
+
+  public void introduce() {
     System.out.println("Hi I am " + this.name + " I am a " + this.type);
   }
 }
 
-public class Wizard extends Player{
-  public Wizard(String name, String type){
+public class Wizard extends Player {
+  public Wizard(String name, String type) {
     // System.out.println("Wizard " + this); // need to instantiate super first
     super(name, type);
     System.out.println("Wizard " + this);
   }
-  public void play(){
+
+  public void play() {
     System.out.println("WEEEEE I am a " + this.type);
   }
 }
