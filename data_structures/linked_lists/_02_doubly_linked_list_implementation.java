@@ -1,9 +1,10 @@
+
 // 10 --> 5 --> 16 <==> 10 <-- 5 <-- 16
 
 import java.util.*;
 
-class _02_doubly_linked_list_implementation{
-  public static void main(String[] args){
+class _02_doubly_linked_list_implementation {
+  public static void main(String[] args) {
     DoublyLinkedList myLinkedList = new DoublyLinkedList(10);
     myLinkedList.displayList();
 
@@ -27,25 +28,25 @@ class _02_doubly_linked_list_implementation{
     myLinkedList.remove(6);
     myLinkedList.remove(6);
     System.out.println(myLinkedList.getLength());
-    
-    myLinkedList.insert(-5, -100);  // insert anywhere before index 0 - prepend
-    myLinkedList.insert(8, 100);    // insert anywhere after index 5 - append
+
+    myLinkedList.insert(-5, -100); // insert anywhere before index 0 - prepend
+    myLinkedList.insert(8, 100); // insert anywhere after index 5 - append
     System.out.println(myLinkedList.getLength());
-  }  
+  }
 }
 
-public class DoublyLinkedList{
+public class DoublyLinkedList {
   Node head;
   Node tail;
   int length;
 
-  public DoublyLinkedList(int value){
+  public DoublyLinkedList(int value) {
     head = new Node(value);
     tail = head;
     length = 1;
   }
 
-  public void append(int value){
+  public void append(int value) {
     Node newNode = new Node(value);
     tail.next = newNode;
     newNode.previous = tail;
@@ -53,8 +54,8 @@ public class DoublyLinkedList{
     length++;
     displayList();
   }
-  
-  public void prepend(int value){
+
+  public void prepend(int value) {
     Node newNode = new Node(value);
     newNode.next = head;
     head.previous = newNode;
@@ -63,22 +64,20 @@ public class DoublyLinkedList{
     displayList();
   }
 
-  private Node traverseToIndex(int index){
+  private Node traverseToIndex(int index) {
     Node current = head;
-    for (int i = 1; i < index; ++i){
+    for (int i = 1; i < index; ++i) {
       current = current.next;
     }
     return current;
   }
 
-  public void insert(int index, int value){
-    if (index <= 0){
+  public void insert(int index, int value) {
+    if (index <= 0) {
       prepend(value);
-    }
-    else if (index >= length){
+    } else if (index >= length) {
       append(value);
-    }
-    else{
+    } else {
       Node current = traverseToIndex(index);
       Node newNode = new Node(value);
       newNode.next = current.next;
@@ -90,39 +89,36 @@ public class DoublyLinkedList{
     }
   }
 
-  public void remove(int index){
-    if (index < 0 || index >= length){
+  public void remove(int index) {
+    if (index < 0 || index >= length) {
       System.out.println("Index is out of the bounds");
       return;
-    }
-    else if (index == 0){
+    } else if (index == 0) {
       head = head.next;
       head.previous = null;
       length--;
-    }
-    else{
+    } else {
       Node current = traverseToIndex(index);
       current.next = current.next.next;
       length--;
       // when removing last item, it becomes tail
-      if (index == length){
+      if (index == length) {
         tail = current;
-      }
-      else{        
+      } else {
         current.next.previous = current;
       }
     }
     displayList();
   }
 
-  public int getLength(){
+  public int getLength() {
     return this.length;
   }
 
-  public void displayList(){
+  public void displayList() {
     List<Integer> myList = new ArrayList<>();
     Node current = head;
-    while(current != null){
+    while (current != null) {
       myList.add(current.value);
       current = current.next;
     }
@@ -130,23 +126,24 @@ public class DoublyLinkedList{
     displayReverseList();
   }
 
-  public void displayReverseList(){
+  public void displayReverseList() {
     List<Integer> myList = new ArrayList<>();
     Node current = tail;
-    while (current != null){
+    while (current != null) {
       myList.add(current.value);
       current = current.previous;
     }
-    System.out.println("Head " + head.value + "\tTail " + tail.value + "\tReverse List " + Arrays.toString(myList.toArray()) + "\n");
+    System.out.println(
+        "Head " + head.value + "\tTail " + tail.value + "\tReverse List " + Arrays.toString(myList.toArray()) + "\n");
   }
 }
 
-public class Node{
+public class Node {
   int value;
   Node next;
   Node previous;
 
-  public Node (int value){
+  public Node(int value) {
     this.value = value;
     this.next = null;
     this.previous = null;
