@@ -23,8 +23,7 @@ class _02_stack_implmentation_arrays{
     myStack.pop();
     System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
-    System.out.println("Last element " + myStack.getLastElement());
-    
+    System.out.println("Last element " + myStack.getLastElement());    
   }
 }
 
