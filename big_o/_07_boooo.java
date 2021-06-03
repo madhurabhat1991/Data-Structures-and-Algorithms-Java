@@ -1,17 +1,17 @@
-class _07_boooo{
-  public static void main(String[] args){
-    int[] n = new int[]{1,2,3,4,5};
+class _07_boooo {
+  public static void main(String[] args) {
+    int[] n = new int[] { 1, 2, 3, 4, 5 };
 
     boooo(n);
 
     String[] hiArray = arrayOfHiNTimes(6);
-    for (String each : hiArray){
+    for (String each : hiArray) {
       System.out.println(each);
     }
   }
 
-  public static void boooo(int[] n){
-    for (int i = 0; i < n.length; ++i){
+  public static void boooo(int[] n) {
+    for (int i = 0; i < n.length; ++i) {
       System.out.println("boooo!");
     }
 
@@ -19,10 +19,10 @@ class _07_boooo{
     // Space complexity = O(1)
   }
 
-  public static String[] arrayOfHiNTimes(int n){
+  public static String[] arrayOfHiNTimes(int n) {
     String[] hiArray = new String[n];
-    
-    for (int i = 0; i < n; ++i){
+
+    for (int i = 0; i < n; ++i) {
       hiArray[i] = "hi";
     }
 
