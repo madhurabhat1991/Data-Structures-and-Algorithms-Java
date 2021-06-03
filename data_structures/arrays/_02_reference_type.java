@@ -1,7 +1,7 @@
 import java.util.*;
 
-class _02_reference_type{
-  public static void main(String[] args){
+class _02_reference_type {
+  public static void main(String[] args) {
     Map<String, Object> object1 = new HashMap<>();
     object1.put("value", 10);
     System.out.println("object1 " + object1);
