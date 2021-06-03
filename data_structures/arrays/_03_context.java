@@ -1,9 +1,9 @@
 import java.util.*;
 
-class _03_context{
-  public static void main(String[] args){
+class _03_context {
+  public static void main(String[] args) {
     // Scope
-    // System.out.println(a);  // a is out of scope
+    // System.out.println(a); // a is out of scope
     ClassA classA = new ClassA();
     System.out.println(classA.a); // a is in the scope of classA
 
@@ -13,9 +13,10 @@ class _03_context{
   }
 }
 
-public class ClassA{
+public class ClassA {
   public int a = 10;
-  public void functionA(){
+
+  public void functionA() {
     System.out.println(this);
   }
 }
