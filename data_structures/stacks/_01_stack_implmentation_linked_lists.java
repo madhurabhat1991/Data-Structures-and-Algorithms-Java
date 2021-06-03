@@ -113,5 +113,5 @@ public class Node{
   public Node(String value)  {
     this.value = value;
     this.next = null;
-  }  
+  }
 }
