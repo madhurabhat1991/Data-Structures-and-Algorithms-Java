@@ -1,7 +1,7 @@
 import java.util.*;
 
-class _02_hashTables{
-  public static void main(String[] args){
+class _02_hashTables {
+  public static void main(String[] args) {
     // HashTables
     Map<String, String> names = new Hashtable<String, String>();
 
@@ -19,7 +19,7 @@ class _02_hashTables{
 
     System.out.println(names);
     System.out.println();
-    
+
     // HashMap
     Map<String, String> phones = new HashMap<String, String>();
 
@@ -34,7 +34,7 @@ class _02_hashTables{
 
     System.out.println(phones);
     System.out.println();
-    
+
     // HashSet
     Set<String> fullNames = new HashSet<String>();
 
@@ -43,11 +43,11 @@ class _02_hashTables{
 
     System.out.println(fullNames);
 
-    if (fullNames.contains("Marie Curie")){
+    if (fullNames.contains("Marie Curie")) {
       System.out.println("Marie is present");
     }
 
-    if (!fullNames.contains("Isaac Newton")){
+    if (!fullNames.contains("Isaac Newton")) {
       System.out.println("Isaac is not present");
     }
 
