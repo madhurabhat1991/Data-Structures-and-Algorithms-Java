@@ -1,7 +1,7 @@
 import java.util.*;
 
-class _01_stack_implmentation_linked_lists{
-  public static void main(String[] args){
+class _01_stack_implmentation_linked_lists {
+  public static void main(String[] args) {
     Stack myStack = new Stack();
     System.out.println(myStack.getLength());
     System.out.println("Is empty? " + myStack.isEmpty());
@@ -27,24 +27,23 @@ class _01_stack_implmentation_linked_lists{
   }
 }
 
-public class Stack{
+public class Stack {
   Node top;
   Node bottom;
   int length;
 
-  public Stack(){
+  public Stack() {
     this.top = null;
     this.bottom = null;
     this.length = 0;
   }
 
-  public void push(String value){
+  public void push(String value) {
     Node newNode = new Node(value);
-    if (length == 0){
+    if (length == 0) {
       top = newNode;
       bottom = newNode;
-    }
-    else{
+    } else {
       newNode.next = top;
       top = newNode;
     }
@@ -52,67 +51,65 @@ public class Stack{
     displayStack();
   }
 
-  public void pop(){
-    if (length > 0){
+  public void pop() {
+    if (length > 0) {
       top = top.next;
 
-      if (length == 1){
+      if (length == 1) {
         top = null;
         bottom = null;
       }
-      length--;      
+      length--;
     }
 
-    if (length > 0){
+    if (length > 0) {
       displayStack();
-    }
-    else{
+    } else {
       System.out.println("Stack is empty");
     }
   }
 
-  public String peek(){
-    if (length > 0){
+  public String peek() {
+    if (length > 0) {
       return top.value;
-    }
-    else{
+    } else {
       return null;
     }
   }
 
-  public boolean isEmpty(){
+  public boolean isEmpty() {
     return length == 0;
   }
 
-  public String getLastElement(){
-    if (length > 0){
+  public String getLastElement() {
+    if (length > 0) {
       return bottom.value;
-    }
-    else{
+    } else {
       return null;
     }
   }
 
-  public int getLength(){
+  public int getLength() {
     return this.length;
   }
 
-  public void displayStack(){
+  public void displayStack() {
     List<String> myList = new ArrayList<>();
     Node current = this.top;
-    while(current != null){
+    while (current != null) {
       myList.add(current.value);
       current = current.next;
     }
-    System.out.println("Top " + this.top.value + "\tBottom " + this.bottom.value + "\tList " + Arrays.toString(myList.toArray()));
+    System.out.println(
+        "Top " + this.top.value + "\tBottom " + this.bottom.value + "\tList " + Arrays.toString(myList.toArray()));
   }
 }
 
-public class Node{
+public class Node {
   String value;
   Node next;
 
-  public Node(String value)  {
+  public Node(String value) {
     this.value = value;
     this.next = null;
   }
