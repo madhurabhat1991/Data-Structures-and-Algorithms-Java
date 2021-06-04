@@ -1,6 +1,6 @@
 import java.util.*;
 
-class _03_queue_implmentation_linked_lists {
+class _01_queue_implmentation_linked_lists {
   public static void main(String[] args) {
     Stack myStack = new Stack();
     System.out.println(myStack.getLength());
