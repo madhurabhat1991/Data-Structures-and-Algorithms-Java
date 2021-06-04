@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/stacks/_02_stack_implmentation_arrays.java"
+run = "java data_structures/queues/_01_queue_implmentation_linked_lists.java"

@@ -2,73 +2,75 @@ import java.util.*;
 
 class _01_queue_implmentation_linked_lists {
   public static void main(String[] args) {
-    Stack myStack = new Stack();
-    System.out.println(myStack.getLength());
-    System.out.println("Is empty? " + myStack.isEmpty());
-    myStack.pop();
-    System.out.println("Peek " + myStack.peek());
-    myStack.push("Google");
-    System.out.println("Peek " + myStack.peek());
-    myStack.pop();
-    System.out.println("Peek " + myStack.peek());
-    myStack.push("Google");
-    myStack.push("Udemy");
-    System.out.println("Peek " + myStack.peek());
-    myStack.push("Discord");
-    System.out.println(myStack.getLength());
-    System.out.println("Is empty? " + myStack.isEmpty());
-    System.out.println("Last element " + myStack.getLastElement());
-    myStack.pop();
-    myStack.pop();
-    myStack.pop();
-    System.out.println(myStack.getLength());
-    System.out.println("Is empty? " + myStack.isEmpty());
-    System.out.println("Last element " + myStack.getLastElement());
+    Queue myQueue = new Queue();
+    System.out.println(myQueue.getLength());
+    System.out.println("Is empty? " + myQueue.isEmpty());
+    myQueue.dequeue();
+    System.out.println("Peek " + myQueue.peek());
+    myQueue.enqueue("Scooby");
+    System.out.println("Peek " + myQueue.peek());
+    myQueue.dequeue();
+    System.out.println("Peek " + myQueue.peek());
+    myQueue.enqueue("Scooby");
+    myQueue.enqueue("Shaggy");
+    System.out.println("Peek " + myQueue.peek());
+    myQueue.enqueue("Velma");
+    System.out.println(myQueue.getLength());
+    System.out.println("Is empty? " + myQueue.isEmpty());
+    System.out.println("Last element " + myQueue.getLastElement());
+    myQueue.dequeue();
+    System.out.println("Peek " + myQueue.peek());
+    myQueue.dequeue();
+    System.out.println("Peek " + myQueue.peek());
+    myQueue.dequeue();
+    System.out.println(myQueue.getLength());
+    System.out.println("Is empty? " + myQueue.isEmpty());
+    System.out.println("Last element " + myQueue.getLastElement());
   }
 }
 
-public class Stack {
-  Node top;
-  Node bottom;
+public class Queue {
+  Node first;
+  Node last;
   int length;
 
-  public Stack() {
-    this.top = null;
-    this.bottom = null;
+  public Queue() {
+    this.first = null;
+    this.last = null;
     this.length = 0;
   }
 
-  public void push(String value) {
+  public void enqueue(String value) {
     Node newNode = new Node(value);
     if (length == 0) {
-      top = newNode;
-      bottom = newNode;
+      first = newNode;
     } else {
-      newNode.next = top;
-      top = newNode;
+      last.next = newNode;
     }
+    last = newNode;
     length++;
-    displayStack();
+    displayQueue();
   }
 
-  public void pop() {
+  public void dequeue() {
     if (length > 0) {
-      top = top.next;
+      first = first.next;
       if (length == 1) {
-        bottom = null;
+        last = null;
+        System.out.print("Removed last item - ");
       }
       length--;
     }
     if (length > 0) {
-      displayStack();
+      displayQueue();
     } else {
-      System.out.println("Stack is empty");
+      System.out.println("Queue is empty");
     }
   }
 
   public String peek() {
     if (length > 0) {
-      return top.value;
+      return first.value;
     } else {
       return null;
     }
@@ -80,7 +82,7 @@ public class Stack {
 
   public String getLastElement() {
     if (length > 0) {
-      return bottom.value;
+      return last.value;
     } else {
       return null;
     }
@@ -90,15 +92,15 @@ public class Stack {
     return this.length;
   }
 
-  public void displayStack() {
+  public void displayQueue() {
     List<String> myList = new ArrayList<>();
-    Node current = this.top;
+    Node current = this.first;
     while (current != null) {
       myList.add(current.value);
       current = current.next;
     }
     System.out.println(
-        "Top " + this.top.value + "\tBottom " + this.bottom.value + "\tList " + Arrays.toString(myList.toArray()));
+        "First " + this.first.value + "\tLast " + this.last.value + "\tList " + Arrays.toString(myList.toArray()));
   }
 }
 
