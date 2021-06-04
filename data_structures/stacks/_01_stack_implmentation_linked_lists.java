@@ -56,6 +56,7 @@ public class Stack {
       top = top.next;
       if (length == 1) {
         bottom = null;
+        System.out.print("Removed last item - ");
       }
       length--;
     }
