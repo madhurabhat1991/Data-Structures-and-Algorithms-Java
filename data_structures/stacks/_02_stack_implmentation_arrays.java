@@ -43,7 +43,6 @@ public class Stack {
     if (this.stackArray.size() > 0) {
       this.stackArray.remove(this.stackArray.size() - 1);
     }
-
     if (this.stackArray.size() > 0) {
       displayStack();
     } else {
