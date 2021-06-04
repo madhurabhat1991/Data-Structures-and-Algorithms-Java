@@ -54,14 +54,11 @@ public class Stack {
   public void pop() {
     if (length > 0) {
       top = top.next;
-
       if (length == 1) {
-        top = null;
         bottom = null;
       }
       length--;
     }
-
     if (length > 0) {
       displayStack();
     } else {
