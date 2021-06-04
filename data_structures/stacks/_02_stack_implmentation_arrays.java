@@ -41,7 +41,7 @@ public class Stack {
 
   public void pop() {
     if (this.stackArray.size() > 0) {
-      if (this.stackArray.size() == 1){
+      if (this.stackArray.size() == 1) {
         System.out.print("Removed last item - ");
       }
       this.stackArray.remove(this.stackArray.size() - 1);
