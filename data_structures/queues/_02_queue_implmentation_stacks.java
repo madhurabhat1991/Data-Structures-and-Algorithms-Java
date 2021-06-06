@@ -5,7 +5,7 @@ import java.util.*;
 
 class _02_queue_implmentation_stacks {
   public static void main(String[] args) {
-    Queue myQueue = new Queue();    
+    Queue myQueue = new Queue();
     System.out.println(myQueue.getLength());
     System.out.println("Is empty? " + myQueue.empty());
     System.out.println("Pop " + myQueue.pop());
