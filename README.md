@@ -14,4 +14,7 @@
   - Arrays
   - Hash tables
   - Linked lists
+  - Stacks
+  - Queues
+  - Trees
 - Algorithms
