@@ -61,92 +61,90 @@ public class BinarySearchTree {
 
   public boolean lookup(int value) {
     Node current = root;
-    while (current != null){
-      if (value == current.value){
+    while (current != null) {
+      if (value == current.value) {
         return true;
       }
-      if (value > current.value){
+      if (value > current.value) {
         current = current.right;
-      }
-      else {
+      } else {
         current = current.left;
       }
     }
     return false;
   }
 
-  public void remove(int value){
-    if (root == null){
+  public void remove(int value) {
+    if (root == null) {
       return;
     }
     Node current = root;
     Node parentNode = null;
-    while (current != null){
-      if (value < current.value){
+    while (current != null) {
+      if (value < current.value) {
         parentNode = current;
         current = current.left;
-      }
-      else if (value > current.value){
+      } else if (value > current.value) {
         parentNode = current;
         current = current.right;
       }
       // (value == current.value, means if we found the value to be removed)
       else {
-          // Option 1: NO RIGHT CHILD            // Child means the child of current Node
-          if (current.right == null) {
-              // if parentNode is null means delete the root node
-              if (parentNode == null) {
-                  this.root = current.left;
-              } else {
-                  // if current < parent, make current left child a left child of parent
-                  if (current.value < parentNode.value) {
-                      parentNode.left = current.left;
-                  }
-                  // if current > parent, make current's left child a right child of parent
-                  else if (current.value > parentNode.value) {
-                      parentNode.right = current.left;
-                  }
-              }
+        // Option 1: NO RIGHT CHILD // Child means the child of current Node
+        if (current.right == null) {
+          // if parentNode is null means delete the root node
+          if (parentNode == null) {
+            this.root = current.left;
+          } else {
+            // if current < parent, make current left child a left child of parent
+            if (current.value < parentNode.value) {
+              parentNode.left = current.left;
+            }
+            // if current > parent, make current's left child a right child of parent
+            else if (current.value > parentNode.value) {
+              parentNode.right = current.left;
+            }
           }
+        }
 
-          // Option 2: RIGHT CHILD WHICH DOESN'T HAVE A LEFT CHILD
-          else if (current.right.left == null) {
-              current.right.left = current.left;
-              if (parentNode == null) {
-                  this.root = current.right;
-              } else {
-                  // if current < parent, make current's right child a left child of parent
-                  if (current.value < parentNode.value) {
-                      parentNode.left = current.right;
-                  }
-                  // if current > parent, make current's right child a right child of parent
-                  else if (current.value > parentNode.value) {
-                      parentNode.right = current.right;
-                  }
-              }
+        // Option 2: RIGHT CHILD WHICH DOESN'T HAVE A LEFT CHILD
+        else if (current.right.left == null) {
+          current.right.left = current.left;
+          if (parentNode == null) {
+            this.root = current.right;
+          } else {
+            // if current < parent, make current's right child a left child of parent
+            if (current.value < parentNode.value) {
+              parentNode.left = current.right;
+            }
+            // if current > parent, make current's right child a right child of parent
+            else if (current.value > parentNode.value) {
+              parentNode.right = current.right;
+            }
           }
+        }
 
-          // Option 3: RIGHT CHILD WHICH HAVE LEFT CHILD
-          else {
-              if (parentNode == null) {
-                  // save reference of left and right nodes of the root
-                  Node leftNode = this.root.left;
-                  Node rightNode = this.root.right;
-                  // root.right.left node becomes new root
-                  this.root = current.right.left;
-                  rightNode.left = rightNode.left.right;
-                  // set back the saved reference of left and right nodes of root.
-                  this.root.left = leftNode;
-                  this.root.right = rightNode;
-              } else {
-                  if (current.value < parentNode.value) {
-                      parentNode.left = current.right.left;
-                  } else if (current.value > parentNode.value) {
-                      parentNode.right = current.right.left;
-                  }
-              }
+        // Option 3: RIGHT CHILD WHICH HAVE LEFT CHILD
+        else {
+          if (parentNode == null) {
+            // save reference of left and right nodes of the root
+            Node leftNode = this.root.left;
+            Node rightNode = this.root.right;
+            // root.right.left node becomes new root
+            this.root = current.right.left;
+            rightNode.left = rightNode.left.right;
+            // set back the saved reference of left and right nodes of root.
+            this.root.left = leftNode;
+            this.root.right = rightNode;
+          } else {
+            if (current.value < parentNode.value) {
+              parentNode.left = current.right.left;
+            } else if (current.value > parentNode.value) {
+              parentNode.right = current.right.left;
+            }
           }
-          return;
+        }
+        return;
       }
     }
   }
