@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/trees/_02_priority_queue.java"
+run = "java data_structures/trees/_03_trie.java"
