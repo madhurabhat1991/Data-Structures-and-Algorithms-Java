@@ -1,2 +1,2 @@
 language = "java10"
-run = "java data_structures/trees/_03_trie.java"
+run = "java data_structures/graphs/_01_graph_implementation.java"
