@@ -17,6 +17,9 @@ class _04_reverseString {
     }
     return reverseStringRecursive(str.substring(1)) + str.charAt(0);
 
+    // also works
+    // return str.charAt(str.length() - 1) + reverseStringRecursive(str.substring(0, str.length() - 1));
+
     // TC - O(n)
   }
 
