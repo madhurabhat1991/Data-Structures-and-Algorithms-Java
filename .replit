@@ -1,2 +1,2 @@
 language = "java10"
-run = "java algorithms/recursion/_02_factorial.java"
+run = "java algorithms/recursion/_03_fibonacci.java"
