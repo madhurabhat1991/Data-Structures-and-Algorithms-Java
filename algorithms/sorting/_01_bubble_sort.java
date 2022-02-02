@@ -22,7 +22,7 @@ class _01_bubble_sort {
     }
     System.out.println(Arrays.toString(numbers));
 
-    // TC - O(n)
+    // TC - O(n^2)
     // SC - O(1)
   }
 }
