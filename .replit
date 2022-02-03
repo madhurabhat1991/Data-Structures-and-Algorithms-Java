@@ -1,2 +1,2 @@
 language = "java10"
-run = "java algorithms/sorting/_02_selection_sort.java"
+run = "java algorithms/sorting/_03_insertion_sort.java"
